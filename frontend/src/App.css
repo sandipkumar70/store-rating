@@ -1,0 +1,133 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: rgb(238, 242, 247);
+  color: rgb(34, 34, 34);
+}
+
+h2, h3 {
+  color: rgb(26, 61, 109);
+}
+
+
+.box {
+  max-width: 400px;
+  margin: 60px auto;
+  background: rgb(255, 255, 255);
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box input, .box select {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 8px 0;
+}
+
+input, select {
+  padding: 8px 10px;
+  margin: 6px 6px 6px 0;
+  border: 1px solid rgb(197, 207, 219);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  padding: 8px 16px;
+  background: rgb(26, 115, 232);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(21, 88, 176);
+}
+
+.error {
+  color: rgb(217, 48, 37);
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  margin: 12px 0 24px 0;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+th {
+  background: rgb(26, 115, 232);
+  color: rgb(255, 255, 255);
+  text-align: left;
+  padding: 10px;
+  border: none;
+}
+
+td {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid rgb(227, 232, 239);
+}
+
+tr:hover td {
+  background: rgb(245, 249, 255);
+}
+
+.page {
+  padding: 20px 24px;
+}
+
+.navbar {
+  background: rgb(26, 61, 109);
+  color: rgb(255, 255, 255);
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page .navbar {
+  margin: -20px -24px 20px -24px;
+}
+
+.navbar span {
+  margin-right: 12px;
+}
+
+.navbar button {
+  background: rgb(255, 255, 255);
+  color: rgb(26, 61, 109);
+}
+
+.cards {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0 24px 0;
+}
+
+.card {
+  flex: 1;
+  background: rgb(255, 255, 255);
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.card p {
+  margin: 0;
+  color: rgb(85, 85, 85);
+}
+
+.card h1 {
+  margin: 8px 0 0 0;
+  color: rgb(26, 115, 232);
+}
+
+

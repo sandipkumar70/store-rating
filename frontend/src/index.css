@@ -1,0 +1,684 @@
+
+:root {
+  --navy: rgb(22, 50, 92);
+  --blue: rgb(37, 99, 235);
+  --blue-dark: rgb(29, 78, 216);
+  --green: rgb(22, 128, 61);
+  --amber: rgb(217, 119, 6);
+  --red: rgb(200, 40, 40);
+  --bg: rgb(241, 245, 249);
+  --white: rgb(255, 255, 255);
+  --text: rgb(31, 41, 55);
+  --muted: rgb(107, 114, 128);
+  --border: rgb(214, 222, 232);
+  --row-hover: rgb(239, 246, 255);
+  --row-alt: rgb(248, 250, 252);
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-align: left;
+  display: block;
+}
+
+h2, h3 {
+  color: var(--navy);
+}
+
+.error {
+  color: var(--red);
+}
+
+.success {
+  color: var(--green);
+}
+
+/* ---------- input and button ---------- */
+input, select {
+  padding: 9px 10px;
+  margin: 6px 6px 6px 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  background: var(--white);
+  color: var(--text);
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+
+button {
+  padding: 9px 18px;
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+button:hover {
+  background: var(--blue-dark);
+}
+
+/* ---------- navbar ---------- */
+.page {
+  padding: 0 24px 32px 24px;
+}
+
+.navbar {
+  background: var(--navy);
+  color: var(--white);
+  padding: 14px 24px;
+  margin: 0 -24px 24px -24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar b {
+  letter-spacing: 1px;
+}
+
+.navbar span {
+  margin-right: 14px;
+  font-size: 14px;
+}
+
+.navbar button {
+  background: var(--white);
+  color: var(--navy);
+  padding: 7px 14px;
+}
+
+.navbar button:hover {
+  background: rgb(220, 230, 245);
+}
+
+.navbar button:focus {
+  outline: none;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.nav-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.nav-info small {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* ---------- page heading ---------- */
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.page-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: rgb(219, 234, 254);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.page-header h2 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.page-header p {
+  margin: 4px 0 0 0;
+  color: var(--muted);
+}
+
+/* ---------- stat cards ---------- */
+.cards {
+  display: flex;
+  gap: 16px;
+  margin: 0 0 24px 0;
+}
+
+.stat-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.stat-blue {
+  background: rgb(239, 246, 255);
+  border-left: 5px solid var(--blue);
+}
+
+.stat-green {
+  background: rgb(240, 253, 244);
+  border-left: 5px solid var(--green);
+}
+
+.stat-amber {
+  background: rgb(255, 251, 235);
+  border-left: 5px solid var(--amber);
+}
+
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.stat-blue .stat-icon {
+  background: rgb(219, 234, 254);
+}
+
+.stat-green .stat-icon {
+  background: rgb(220, 252, 231);
+}
+
+.stat-amber .stat-icon {
+  background: rgb(254, 243, 199);
+}
+
+.stat-label {
+  margin: 0;
+  color: var(--muted);
+}
+
+.stat-value {
+  margin: 4px 0;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.stat-blue .stat-value {
+  color: var(--blue);
+}
+
+.stat-green .stat-value {
+  color: var(--green);
+}
+
+.stat-amber .stat-value {
+  color: var(--amber);
+}
+
+.stat-note {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ---------- white panel ---------- */
+.panel {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.panel h3 {
+  margin: 0 0 14px 0;
+  font-size: 17px;
+}
+
+.panel p {
+  margin: 12px 0 0 0;
+  font-size: 14px;
+}
+
+.panel .panel-sub {
+  margin: -8px 0 14px 0;
+  color: var(--muted);
+}
+
+/* ---------- form and filter line ---------- */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.form-row input, .form-row select {
+  margin: 0;
+  flex: 1 1 170px;
+  min-width: 0;
+}
+
+.form-row button {
+  flex: 0 0 auto;
+}
+
+.form-row .search-input {
+  flex: 0 1 300px;
+}
+
+/* ---------- table ---------- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: var(--white);
+  margin: 12px 0 28px 0;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.table-wrap {
+  margin-top: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.table-wrap table {
+  margin: 0;
+  box-shadow: none;
+}
+
+th {
+  background: var(--blue);
+  color: var(--white);
+  text-align: left;
+  padding: 11px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  white-space: nowrap;
+}
+
+th.sortable {
+  cursor: pointer;
+}
+
+th.sortable:hover {
+  background: var(--blue-dark);
+}
+
+td {
+  padding: 11px 14px;
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid rgb(232, 237, 244);
+}
+
+tr:nth-child(even) td {
+  background: var(--row-alt);
+}
+
+tr:hover td {
+  background: var(--row-hover);
+}
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 24px 10px;
+}
+
+.empty-state b {
+  display: block;
+  margin-top: 6px;
+  color: var(--navy);
+}
+
+.empty-state p {
+  margin: 4px 0 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.rating {
+  color: var(--amber);
+  font-weight: 600;
+}
+
+.stars {
+  color: var(--amber);
+  font-weight: 600;
+}
+
+.not-rated {
+  color: var(--muted);
+}
+
+.view-btn {
+  padding: 5px 14px;
+  font-size: 13px;
+}
+
+/* ---------- role badge ---------- */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-admin {
+  background: rgb(224, 231, 255);
+  color: var(--navy);
+}
+
+.badge-owner {
+  background: rgb(254, 243, 199);
+  color: rgb(146, 64, 14);
+}
+
+.badge-user {
+  background: rgb(229, 231, 235);
+  color: rgb(55, 65, 81);
+}
+
+/* ---------- user detail ---------- */
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.detail-item small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.detail-item b {
+  font-size: 15px;
+}
+
+/* ---------- stores page ---------- */
+.search-form {
+  display: flex;
+  gap: 12px;
+}
+
+.search-box {
+  flex: 1;
+  position: relative;
+}
+
+.search-box span {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search-box input {
+  width: 100%;
+  margin: 0;
+  padding: 12px 14px 12px 42px;
+  font-size: 14px;
+  text-overflow: ellipsis;
+}
+
+.search-form button {
+  padding: 12px 24px;
+}
+
+.rate-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rate-cell select {
+  margin: 0;
+}
+
+/* ---------- login and signup ---------- */
+.login-page {
+  min-height: 100vh;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--white);
+  padding: 32px 28px;
+  border-radius: 12px;
+  border-top: 5px solid var(--blue);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.login-card h2 {
+  text-align: center;
+  margin: 0 0 4px 0;
+  letter-spacing: 1px;
+  color: var(--navy);
+}
+
+.login-sub {
+  text-align: center;
+  margin: 0 0 22px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.login-card label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 14px;
+}
+
+.login-card input {
+  display: block;
+  width: 100%;
+  margin: 6px 0 0 0;
+  padding: 10px 12px;
+}
+
+.login-card button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 11px;
+  font-size: 15px;
+}
+
+.login-card .error {
+  margin: 12px 0 0 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login-footer {
+  text-align: center;
+  margin: 20px 0 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.login-footer a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  
+  .navbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .navbar > b {
+    order: 1;
+    flex: 0 1 auto;
+    margin: 0 auto 0 0;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .navbar .nav-user {
+    display: contents;
+  }
+
+  .navbar .nav-user button {
+    order: 2;
+    flex: 0 0 auto;
+    padding: 6px 9px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .navbar .nav-info,
+  .navbar .nav-user span {
+    display: block;
+    order: 3;
+    flex: 0 0 100%;
+    margin: 0;
+    font-size: 13px;
+  }
+
+  
+  .page-header h2 {
+    font-size: 20px;
+    word-break: break-word;
+  }
+
+  .page-header p {
+    font-size: 13px;
+  }
+
+  
+  .cards {
+    flex-direction: column;
+  }
+
+  .stat-card {
+    width: 100%;
+  }
+
+  .search-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .search-form button {
+    width: 100%;
+  }
+
+  .search-box input {
+    font-size: 13px;
+    padding: 11px 12px 11px 38px;
+  }
+
+  
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  
+  .table-wrap table.stack-table {
+    min-width: 0;
+  }
+
+  .stack-table thead {
+    display: none;
+  }
+
+  .stack-table,
+  .stack-table tbody,
+  .stack-table tr,
+  .stack-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .stack-table tr {
+    padding: 8px 0;
+    border-bottom: 8px solid var(--bg);
+  }
+
+  .stack-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px;
+    border-bottom: none;
+    text-align: right;
+  }
+
+  .stack-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--muted);
+    text-align: left;
+  }
+
+  .stack-table td.empty {
+    justify-content: center;
+  }
+
+  .stack-table td.empty::before {
+    content: none;
+  }
+}
